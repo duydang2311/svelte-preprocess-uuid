@@ -63,3 +63,7 @@ export default {
   ]
 }
 ```
+
+## Known issues
+
+- The uniqueness is not guaranteed when a Svelte file is imported multiple times, since every Svelte file is only preprocessed once.
