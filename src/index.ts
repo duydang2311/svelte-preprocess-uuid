@@ -1,4 +1,4 @@
-import * as svelte from 'svelte/compiler';
+import type { Processed } from 'svelte/types/compiler/preprocess';
 import { v4 as uuid } from '@lukeed/uuid';
 
 const uuidScriptRegex = /uuid_.*?\b/gm;
@@ -26,7 +26,7 @@ function formatScript(script: string) {
 		});
 }
 
-function preprocessMarkup({ content }: { content: string }) {
+function preprocessMarkup({ content }: { content: string }): Processed {
 	let style = '';
 	let script = '';
 	const cloned = new RegExp(uuidMarkupRegex);
@@ -44,7 +44,9 @@ function preprocessMarkup({ content }: { content: string }) {
 			const match = cloned.exec(substring)!;
 			return `"${tryGenerateUUID(match[2])}"`;
 		});
-	return svelte.compile(script + content + style).js;
+	return {
+		code: script + content + style,
+	};
 }
 
 export default {
