@@ -1,8 +1,8 @@
 {
 	"name": "svelte-preprocess-uuid",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "Svelte compile-time UUID generation preprocessor",
-	"main": "src/index.ts",
+	"main": "build/src/index.js",
 	"scripts": {
 		"build": "tsc",
 		"test": "tsc && node build/test/index.js"
@@ -22,7 +22,7 @@
 		"url": "https://github.com/duydang2311/svelte-preprocess-uuid"
 	},
 	"files": [
-		"build"
+		"build/src"
 	],
 	"keywords": [
 		"svelte",
