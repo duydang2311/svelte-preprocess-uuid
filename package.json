@@ -1,6 +1,6 @@
 {
 	"name": "svelte-preprocess-uuid",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Svelte compile-time UUID generation preprocessor",
 	"main": "build/src/index.js",
 	"scripts": {
